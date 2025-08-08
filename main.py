@@ -71,6 +71,10 @@ async def run_swapsynthra(language: str):
     from scripts.swapsynthra import run_swapsynthra as swapsynthra_run
     await swapsynthra_run(language)
 
+async def run_mintomnihub(language: str):
+    from scripts.mintomnihub import run_mintomnihub as mintomnihub_run
+    await mintomnihub_run(language)
+
 
 async def cmd_exit(language: str):
     print_border(f"Exiting...", Fore.GREEN)
@@ -84,6 +88,7 @@ SCRIPT_MAP = {
     "nftcollection": run_nftcollection,
     "wrapuomi": run_wrapuomi,
     "swapsynthra": run_swapsynthra,
+    "mintomnihub": run_mintomnihub,
     "exit": cmd_exit
 }
 
@@ -97,6 +102,7 @@ def get_available_scripts(language):
             
             {"name": "5. Wrap/Unwrap UOMI → WUOMI  │ Uomi Testnet", "value": "wrapuomi", "locked": True},
             {"name": "6. Swap [ UOMI | USDC | SYN | SIM ] → Synthra │ Uomi Testnet", "value": "swapsynthra", "locked": True},
+            {"name": "7. Mint NFT Uomi x OmniHub → OmniHub │ Uomi Testnet", "value": "mintomnihub", "locked": True},
             
         
             {"name": "X. Exit", "value": "exit"},
@@ -110,8 +116,9 @@ def get_available_scripts(language):
             
             {"name": "5. Wrap/Unwrap UOMI → WUOMI  │ Uomi Testnet", "value": "wrapuomi", "locked": True},
             {"name": "6. Swap [ UOMI | USDC | SYN | SIM ] → Synthra │ Uomi Testnet", "value": "swapsynthra", "locked": True},
-            
+            {"name": "7. Mint NFT Uomi x OmniHub → OmniHub │ Uomi Testnet", "value": "mintomnihub", "locked": True},
 
+            
             {"name": "X. Exit", "value": "exit"},
         ]
     }
