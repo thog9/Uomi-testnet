@@ -79,6 +79,10 @@ async def run_liquidity(language: str):
     from scripts.liquidity import run_liquidity as liquidity_run
     await liquidity_run(language)
 
+async def run_mintsweephaus(language: str):
+    from scripts.mintsweephaus import run_mintsweephaus as mintsweephaus_run
+    await mintsweephaus_run(language)
+
 
 async def cmd_exit(language: str):
     print_border(f"Exiting...", Fore.GREEN)
@@ -94,6 +98,7 @@ SCRIPT_MAP = {
     "swapsynthra": run_swapsynthra,
     "mintomnihub": run_mintomnihub,
     "liquidity": run_liquidity,
+    "mintsweephaus": run_mintsweephaus,
     "exit": cmd_exit
 }
 
@@ -109,6 +114,7 @@ def get_available_scripts(language):
             {"name": "6. Swap [ UOMI | USDC | SYN | SIM ] → Synthra │ Uomi Testnet", "value": "swapsynthra", "locked": True},
             {"name": "7. Mint NFT Uomi x OmniHub → OmniHub │ Uomi Testnet", "value": "mintomnihub", "locked": True},
             {"name": "8. Thêm thanh khoản [ WUOMI | USDC | SYM | SIM ] → Synthra | Uomi Testnet", "value": "liquidity", "locked": True},
+            {"name": "9. Mint NFT Uomi → Sweep Haus | Uomi Testnet", "value": "mintsweephaus", "locked": True},
             
         
             {"name": "X. Exit", "value": "exit"},
@@ -124,7 +130,7 @@ def get_available_scripts(language):
             {"name": "6. Swap [ UOMI | USDC | SYN | SIM ] → Synthra │ Uomi Testnet", "value": "swapsynthra", "locked": True},
             {"name": "7. Mint NFT Uomi x OmniHub → OmniHub │ Uomi Testnet", "value": "mintomnihub", "locked": True},
             {"name": "8. Add Liquidity [ WUOMI | USDC | SYM | SIM ] → Synthra | Uomi Testnet", "value": "liquidity", "locked": True},
-
+            {"name": "9. Mint NFT Uomi → Sweep Haus | Uomi Testnet", "value": "mintsweephaus", "locked": True},
             
             {"name": "X. Exit", "value": "exit"},
         ]
